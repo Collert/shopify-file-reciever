@@ -85,12 +85,13 @@ def handle_print_request():
     name = request.form.get('name', 'N/A')
     contact_str = request.form.get('contact_str', 'N/A')
     contact_type = request.form.get('contact_type', '')
+    notes = request.form.get('notes', '')
 
     if file.filename == '':
         return 'No selected file', 400
 
     if file and allowed_file(file.filename):
-        draft = create_draft_order(infill)
+        draft = create_draft_order(infill, name, contact_type, contact_str, notes)
         order_name = draft['name'].lstrip('#')  # e.g. "D1001"
         new_filename = f"Order_{order_name}.{file.filename.rsplit('.', 1)[1]}"
 
