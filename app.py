@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-UPLOAD_FOLDER = os.path.join(os.path.dirname(__file__), 'shopify_orders')
+UPLOAD_FOLDER = os.path.join(os.path.dirname(__file__), 'uploads')
 ALLOWED_EXTENSIONS = {'stl', 'obj'}
 
 SHOPIFY_DOMAIN = os.getenv('SHOPIFY_STORE_DOMAIN')
