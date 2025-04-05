@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, redirect
 import os
 import requests
 from werkzeug.utils import secure_filename
@@ -101,7 +101,7 @@ def handle_print_request():
 
         print(f"[UPLOAD] {filename} saved | Draft Order: {draft['name']}")
 
-        return f"Upload received. Draft order created: {draft['name']}", 200
+        return redirect(SHOPIFY_DOMAIN)
 
     return 'Invalid file type', 400
 
