@@ -101,7 +101,7 @@ def handle_print_request():
 
         print(f"[UPLOAD] {filename} saved | Draft Order: {draft['name']}")
 
-        return redirect(SHOPIFY_DOMAIN)
+        return redirect(f"https://{SHOPIFY_DOMAIN}")
 
     return 'Invalid file type', 400
 
